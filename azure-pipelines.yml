@@ -33,6 +33,8 @@ steps:
   displayName: 'Environment Preperation'
 
 - script: |
+    echo $TRANSCRYPT_KEY
+    echo "transcrypt --yes -c aes-256-cbc -p '${TRANSCRYPT_KEY}'"
     transcrypt --yes -c aes-256-cbc -p '${TRANSCRYPT_KEY}'
     cat ./secrets/dataglitter.co.uk.crt
   env:
