@@ -26,6 +26,7 @@ steps:
 
 - script: |
     python --version
+    pip install --upgrade pip
     pip --version
     pip install awscli
   displayName: 'Environment Preperation'
