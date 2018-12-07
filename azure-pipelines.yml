@@ -78,6 +78,10 @@ steps:
     DOCKER_PASSWORD: $(dockerPassword)
   displayName: 'Push Docker image'
 
+- script: |
+    rm -rf secrets
+  displayName: 'Clean up'
+
 # - script: |
 #     git config --global user.email "reddy.horcrux@gmail.com"
 #     git config --global user.name "Sangram Reddy"
