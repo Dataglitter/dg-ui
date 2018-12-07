@@ -1,6 +1,6 @@
 # dataglitter
 
-> Portfolio building project
+
 
 ## Release Notes
 
