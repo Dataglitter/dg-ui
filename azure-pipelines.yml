@@ -34,6 +34,7 @@ steps:
 
 - script: |
     transcrypt --yes -c aes-256-cbc -p '$TRANSCRYPT_KEY'
+    cat ./secrets/dataglitter.co.uk.crt
   env:
     TRANSCRYPT_KEY: $(transcryptKey)
   displayName: 'Decrypting secrets'
@@ -54,6 +55,7 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
+    cat ./secrets/dataglitter.co.uk.crt
     docker build -t $(dockerId)/$(imageName):v$(major).$(minor).$(patch) .
   displayName: 'Build Docker image'
 
