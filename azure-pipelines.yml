@@ -25,21 +25,22 @@ steps:
   persistCredentials: true
 
 - script: |
-    git clone https://github.com/elasticdog/transcrypt.git
-    cd transcrypt/
-    sudo ln -s ${PWD}/transcrypt /usr/local/bin/transcrypt
-    cd ../
-    ls -ltrha
+    python --version
+    pip --version
+    pip install awscli
   displayName: 'Environment Preperation'
 
 - script: |
-    echo $TRANSCRYPT_KEY
-    echo "transcrypt --yes -c aes-256-cbc -p '${TRANSCRYPT_KEY}'"
-    transcrypt --yes -c aes-256-cbc -p '${TRANSCRYPT_KEY}'
-    cat ./secrets/dataglitter.co.uk.crt
+    mkdir secrets
+    cd secrets
+    aws s3 cp s3://dataglitter-secrets-store/dataglitter.co.uk.crt .
+    aws s3 cp s3://dataglitter-secrets-store/8A76ABC725E66AC77377356C11D81932.txt .
+    aws s3 cp s3://dataglitter-secrets-store/server.key .
+    cd ../
   env:
-    TRANSCRYPT_KEY: $(transcryptKey)
-  displayName: 'Decrypting secrets'
+    AWS_ACCESS_KEY_ID: $(accessKeyId)
+    AWS_SECRET_ACCESS_KEY: $(secretAccessKey)
+  displayName: 'Get Secrets'
 
 - task: NodeTool@0
   inputs:
