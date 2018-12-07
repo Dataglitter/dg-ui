@@ -1,0 +1,25 @@
+<div class="container home"
+     id="Home">
+  <div class="row"
+       v-if="displayTrigger.display">
+    <div class="col-md-12"
+         id="Home-Content">
+      <card v-bind:CardData="popularCardData"
+            v-bind:CardMetadata="popularCardMetadata"
+            v-bind:ProfileData="profileData"
+            v-if="enablePopularCard && displayTrigger.display"></card>
+      <getstarted v-if="enablePopularCard"></getstarted>
+      <card v-bind:CardData="latestCardData"
+            v-bind:CardMetadata="latestCardMetadata"
+            v-bind:ProfileData="profileData"
+            v-if="enableLatestCard && displayTrigger.display"></card>
+      <category v-if="enablePopularCard"></category>
+    </div>
+  </div>
+  <div class="row"
+       v-if="!displayTrigger.display">
+    <div class="col-md-12">
+      <loader></loader>
+    </div>
+  </div>
+</div>

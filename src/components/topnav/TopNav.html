@@ -1,0 +1,56 @@
+<div class="top-nav"
+     id="TopNav">
+  <a class="go-to-home not-in-mobile">
+    <router-link to="/">
+      <svg>
+        <use xlink:href="#square-grid" />
+      </svg>
+    </router-link>
+  </a>
+  <div class="application-header">
+    <a href="/">
+      <h1>DataGlitter</h1>
+    </a>
+  </div>
+  <div class="app-sign-in-sign-up">
+    <button class="btn btn-link not-in-mobile"
+            type="button"
+            v-if="logInStatus === false"
+            v-on:click="signIn()">Sign in</button>
+    <button class="btn btn-outline-primary not-in-mobile"
+            type="button"
+            v-if="logInStatus === false"
+            v-on:click="getStarted()">Get started</button>
+    <button class="btn btn-link not-in-mobile options"
+            type="button"
+            v-if="logInStatus === true"
+            v-popover:options="">
+      <svg>
+        <use xlink:href="#user-logo" />
+      </svg>
+    </button>
+    <button class="btn btn-outline-primary"
+            type="button"
+            v-if="logInStatus === true && enableWritePaper === true"
+            v-on:click="writeAPaper()">Write</button>
+    <popover name="options">
+      <div class="dg-editprofile">
+        <a v-bind:href="profileUrl">Edit Profile</a>
+      </div>
+      <div class="dg-myspace">
+        <a v-bind:href="mySpaceUrl">My Space</a>
+      </div>
+      <div class="dg-moderation"
+           v-if="showMderation('ROLE_ADMIN')">
+        <a v-bind:href="moderation">Moderation</a>
+      </div>
+      <div class="dg-settings"
+      v-if="">
+      <a v-bind:href="settingUrl">Settings</a>
+    </div>
+            
+      <div class="dg-signout"
+           v-on:click="signOut()">Sign out</div>
+    </popover>
+  </div>
+</div>

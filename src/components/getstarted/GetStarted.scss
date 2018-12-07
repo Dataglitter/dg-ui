@@ -1,0 +1,49 @@
+@import "../../assets/scss/custom-bootstrap-variables.scss";
+
+#Get-Started {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: $background-color-primary;
+    margin: 20px 10px;
+    .get-started-promotion {
+        align-items: center;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 20px 30px 20px;
+        h1 {
+            margin-bottom: 30px;
+            font-weight: 550;
+        }
+        .get-started-button-set {
+            align-items: flex-start;
+            width: 100%;
+
+            .btn-dark {
+                background-color: $black;
+                color: $white;
+            }
+        }
+        @media screen and (max-width: $medium-device) {
+            width: 100%;
+        }
+    }
+    .get-started-image {
+        align-items: center;
+        width: 50%;
+        a {
+            svg {
+                display:block;
+                margin: auto;
+                margin-top: 30px;
+                height:250px;
+                width: 250px;
+            }
+        }
+        @media screen and (max-width: $medium-device) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+@import "../../assets/scss/custom-bootstrap-variables.scss";
+#Author {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top:20px;
+    .author-profile-pic {
+        justify-content: center;
+        align-self: center;
+        .profile-pic{
+            div {
+                width: 150px;
+                height: 150px;
+                border-radius: 100%;
+                margin-bottom:5px;
+                background-position: 50% 50% !important;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+            }
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            margin-bottom:5px;
+            background-position: 50% 50% !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+    }
+    .author-profile {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        p {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .author-name {
+            line-height: 1;
+            .author-ink-icon {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        .author-desig {
+            font-size: 12px;
+            font-style: italic;
+            .author-desig-icon {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        .author-about {
+            line-height: 1.2;
+        }
+        
+        .author-connect {
+            justify-content: center;
+            line-height: 1.5;
+            .author-connect-icon {
+                align-self: center;
+                width: 25px;
+                height: 25px;
+                margin: 0% 10px;
+            }
+        }
+    }
+}

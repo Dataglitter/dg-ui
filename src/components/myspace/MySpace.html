@@ -1,0 +1,18 @@
+<div class="container my-space"
+     id="MySpace">
+  <div class="row">
+    <div class="col-md-12"
+         id="MySpace-Content">
+      <card v-bind:CardData="papers"
+            v-bind:CardMetadata="papersMetadata"
+            v-bind:ProfileData="userData"
+            v-if="userContent && papersContent"></card>
+    </div>
+  </div>
+  <div class="row"
+       v-if="!papersContent">
+    <div class="col-md-12">
+      <loader></loader>
+    </div>
+  </div>
+</div>

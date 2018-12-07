@@ -1,0 +1,42 @@
+<modal height="auto"
+       name="email-form"
+       width="60%"
+       @before-open="initialize">
+  <div class="close-get-started-dialog"
+       v-on:click="close('email-form')">
+    <svg>
+      <use xlink:href="#error-new" />
+    </svg>
+  </div>
+  <div id="Email-Form-Modal">
+    <div class="email-form">
+      <div class="email-form-image">
+        <svg>
+          <use xlink:href="#email-filled-closed-envelope-new" />
+        </svg>
+      </div>
+      <h2 class="email-form-title">{{ option }} with email</h2>
+      <p class="email-form-description">Enter the email address associated with your account and we will log you in</p>
+      <input class="form-email-input" type="email" name="email" v-model="emailAuth.email" placeholder="Your email" v-validate="'required||email'" :class="{'input': true, 'is-danger': errors.has('email') }">
+        <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+      <input class="form-password-input" type="password" name="password" v-model="emailAuth.password" placeholder="Your password" v-validate="'required|min:6'" :class="{'input': true, 'is-danger': errors.has('password') }">
+        <span v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
+      <input v-if="newRegistration" class="form-password-input" type="password" name="confirm password" v-model="emailAuth.confirmPassword" placeholder="Confirm password">
+      <button v-if="option" class="btn btn-outline-primary btn-sm signin-sign-up-button" v-on:click="logMeIn()">{{ option }}</button>
+      <p v-if="errorMessage" class="error-message-display"><i>{{ errorMessage }}</i></p>
+      <p v-if="successMessage" class="success-message-display"><i>{{ successMessage }}</i></p>
+      <div class="all-sign-in-options" v-on:click="navigateTo('email-form', 'login')">
+        <svg>
+          <use xlink:href="#back-arrow" />
+        </svg>
+        <a>All {{ option }} options</a>
+      </div>
+      <div>
+          <a href="/termsOfService">Terms Of Service</a>
+      </div>
+      <div class="privacy-policy">
+          <a href="/privacyPolicy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</modal>

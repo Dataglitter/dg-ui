@@ -1,0 +1,19 @@
+<div class="container home"
+     id="Moderation">
+  <div class="row"
+       v-if="displayTrigger.display">
+    <div class="col-md-12"
+         id="Moderation-Content">
+      <card v-bind:CardData="moderationCardData"
+            v-bind:CardMetadata="moderationCardMetadata"
+            v-bind:ProfileData="profileData"
+            v-if="enableModerationCard && displayTrigger.display"></card>
+    </div>
+  </div>
+  <div class="row"
+       v-if="!displayTrigger.display">
+    <div class="col-md-12">
+      <loader></loader>
+    </div>
+  </div>
+</div>

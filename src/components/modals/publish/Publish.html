@@ -1,0 +1,21 @@
+<modal height="auto"
+       name="publish-success"
+       width="60%">
+  <div class="close-publish-success-dialog"
+       v-on:click="close('publish-success')">
+    <svg>
+      <use xlink:href="#error-new" />
+    </svg>
+  </div>
+  <div id="Publish-Success-Modal">
+    <div class="publish-success-form">
+      <div class="publish-success-image">
+        <svg>
+          <use xlink:href="#checked-new" />
+        </svg>
+      </div>
+      <h2 class="publish-success-title">Successfully Published</h2>
+      <p class="publish-success-description">Your paper has been published and awaiting moderation</p>
+    </div>
+  </div>
+</modal>

@@ -1,0 +1,116 @@
+@import "../../../assets/scss/custom-bootstrap-variables.scss";
+
+    .close-get-started-dialog {
+        width: 40px;
+        height: 40px;
+        padding: 2px;
+        display: relative;
+        position: absolute;
+        right: 0px;
+        top:0px;
+        svg {
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            fill: $gray-light;
+            :hover {
+                transition: all .3s ease-in-out;
+                transform: scale(1.2);
+                transform-origin: 50% 50%;
+                fill: $primary;
+            }
+        }
+    }
+    #Login-Modal {
+        background-color: $background-color-secondary !important;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-image:url('../../../assets/images/growth.png');
+        background-position: 100% 10% !important;
+        background-size: auto 120px;
+        background-repeat: no-repeat;
+        .login-form {
+            align-items: center;
+            width: 70%;
+            min-width:200px;
+            display:flex;
+            flex-direction: column;
+            .login-image{
+                align-items: center;
+                width: 50%;
+                min-width:200px;
+                margin-bottom: 10px;
+                svg {
+                    display:block;
+                    margin: auto;
+                    width:100%;
+                    height:auto;
+                    fill: $black;
+                }
+            }
+
+            .login-description, .login-title {
+                text-align: center;
+            }
+            .login-description {
+                font-weight: 300;
+            }
+            .login-title {
+                font-weight: bold;
+            }
+            .sign-up-email{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                background-color: $white;
+                border-radius: 5px;
+                height: 30px;
+                padding:2px 10px;
+                min-width: 320px;
+                cursor: pointer;
+                .sign-up-svg-email{
+                    width:20%;
+                    margin-top: 2px;
+                    svg {
+                        display:block;
+                        margin: auto;
+                        width:20px;
+                        height:20px;
+                        fill: $blue;
+                    }
+                }
+                .sign-up-text{
+                    margin: 5px 10px;
+                }
+            }
+            .existing-user {
+                margin-top: 15px;
+                font-weight: 300;
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                p {
+                    align-items: center;
+                    color: $primary;
+                    margin-top: 5px;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    :hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+            @media screen and (max-width: $small-device) {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: $small-device) {
+            background-image: none;
+        }
+    }

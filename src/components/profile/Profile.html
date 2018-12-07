@@ -1,0 +1,69 @@
+<div class="container profile"
+     id="Profile">
+  <div class="row">
+    <div class="col-md-12"
+         id="Profile-Content">
+      <div class="row">
+          <form>
+              <div class="form-group">
+                <label for="dg-email">Email address</label>
+                <input type="email" class="form-control" id="dg-email" aria-describedby="emailHelp" disabled v-model="currentUser.email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                  <label for="dg-name">Name</label>
+                  <input type="text" class="form-control" id="dg-name" aria-describedby="nameHelp" v-model="currentUser.name">
+                  <small id="nameHelp" class="form-text text-muted">will be used in the Authors section and for SEO</small>
+              </div>
+              <div class="form-group" v-if="currentUser.profilePicture">
+                <center>
+                    <div id="pic-display" v-bind:style="{ backgroundImage: 'url(' + currentUser.profilePicture + ')' }"></div>
+                </center>
+              </div>
+              <div class="form-group">
+                    <label for="dg-pic">Profile Picture</label>
+                    <input type="file" class="form-control" id="dg-pic" aria-describedby="picHelp" v-on:change="onFileChange($event)">
+                    <small id="picHelp" class="form-text text-muted">will be used in the Authors section</small>
+              </div>
+              <div class="form-group">
+                  <label for="dg-designation">Designation</label>
+                  <input type="text" class="form-control" id="dg-designation" aria-describedby="designationHelp" v-model="currentUser.designation">
+                  <small id="designationHelp" class="form-text text-muted">will be used in the Authors section and for SEO</small>
+              </div>
+              <div class="form-group">
+                  <label for="dg-about">About you</label>
+                  <textarea class="form-control" id="dg-about" aria-describedby="aboutHelp" v-model="currentUser.about"></textarea>
+                  <small id="aboutHelp" class="form-text text-muted">will be used in the Authors section. <i>Do not exceedd 100 words</i>.</small>
+              </div>
+              <div class="form-group">
+                  <label for="dg-facebook">Facebook URL</label>
+                  <input type="text" class="form-control" id="dg-facebook" aria-describedby="facebookHelp" v-model="currentUser.facebookURL">
+                  <small id="facebookHelp" class="form-text text-muted">People will be able to find you on Facebook</small>
+              </div>
+              <div class="form-group">
+                  <label for="dg-twitter">Twitter URL</label>
+                  <input type="text" class="form-control" id="dg-twitter" aria-describedby="twitterHelp" v-model="currentUser.twitterURL">
+                  <small id="twitterHelp" class="form-text text-muted">People will be able to find you on Twitter</small>
+              </div>
+              <div class="form-group">
+                  <label for="dg-linkedin">Linkedin URL</label>
+                  <input type="text" class="form-control" id="dg-linkedin" aria-describedby="linkedinHelp" v-model="currentUser.linkedinURL">
+                  <small id="linkedinHelp" class="form-text text-muted">People will be able to find you on Linkedin</small>
+              </div>
+              <div class="form-group">
+                  <label for="dg-instagram">Instagram URL</label>
+                  <input type="text" class="form-control" id="dg-linkedin" aria-describedby="instagramHelp" v-model="currentUser.instagramURL">
+                  <small id="instagramHelp" class="form-text text-muted">People will be able to find you on Instagram</small>
+              </div>
+              <div class="form-group">
+                  <label for="dg-github">Github URL</label>
+                  <input type="text" class="form-control" id="dg-linkedin" aria-describedby="githubHelp" v-model="currentUser.githubURL">
+                  <small id="githubHelp" class="form-text text-muted">People will be able to find you on Github</small>
+              </div>
+              <button class="btn btn-primary" v-on:click.prevent="saveProfile()">Save</button>
+              
+            </form>
+      </div>
+    </div>
+  </div>
+</div>

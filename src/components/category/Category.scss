@@ -1,0 +1,18 @@
+@import "../../assets/scss/custom-bootstrap-variables.scss";
+
+#Category-DG {
+    background-color: $background-color-secondary;
+    margin: 20px 10px;
+    .category {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        svg {
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+            :hover {
+                fill: #077fb7;
+            }
+        }
+    }
+}

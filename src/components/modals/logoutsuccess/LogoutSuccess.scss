@@ -1,0 +1,87 @@
+@import "../../../assets/scss/custom-bootstrap-variables.scss";
+
+    .close-get-started-dialog {
+        width: 40px;
+        height: 40px;
+        padding: 2px;
+        display: relative;
+        position: absolute;
+        right: 0px;
+        top:0px;
+        svg {
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            fill: $gray-light;
+            :hover {
+                transition: all .3s ease-in-out;
+                transform: scale(1.2);
+                transform-origin: 50% 50%;
+                fill: $primary;
+            }
+        }
+    }
+    #Logout-Success-Modal {
+        background-color: $background-color-primary !important;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-image:url('../../../assets/images/growth.png');
+        background-position: 100% 10% !important;
+        background-size: auto 120px;
+        background-repeat: no-repeat;
+        .logout-success-form {
+            align-items: center;
+            width: 70%;
+            min-width:200px;
+            display:flex;
+            flex-direction: column;
+            .logout-success-image{
+                align-items: center;
+                width: 50%;
+                min-width:200px;
+                margin-bottom: 10px;
+                svg {
+                    display:block;
+                    margin: auto;
+                    width:100%;
+                    height:auto;
+                    fill: $black;
+                }
+            }
+
+            .logout-success-title {
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .all-sign-in-options{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                height: 30px;
+                padding: 2px 10px;
+                min-width: 320px;
+                justify-content: center;
+                cursor: pointer;
+                margin-bottom: 10px;
+                svg {
+                    display: block;
+                    margin-right: 10px;
+                    width:20px;
+                    height:20px;
+                    fill: $blue;
+                }
+            }
+
+            @media screen and (max-width: $small-device) {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: $small-device) {
+            background-image: none;
+        }
+    }

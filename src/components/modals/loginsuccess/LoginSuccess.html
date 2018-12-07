@@ -1,0 +1,32 @@
+<modal height="auto"
+       name="login-success"
+       width="60%">
+  <div class="close-get-started-dialog"
+       v-on:click="close('login-success')">
+    <svg>
+      <use xlink:href="#error-new" />
+    </svg>
+  </div>
+  <div id="Login-Success-Modal">
+    <div class="login-success-form">
+      <div class="login-success-image">
+        <svg>
+          <use xlink:href="#checked-new" />
+        </svg>
+      </div>
+      <h2 class="login-success-title">Login Successful</h2>
+      <p class="login-success-description">You can now start wrinting your papers. Never miss out on stuff by your favourite authors by subscribing to their papers.</p>
+      <div class="login-success-write">
+        <button class="btn btn-outline-primary"
+                type="button"
+                v-on:click="writeAPaper()">Write a paper</button>
+      </div>
+      <div>
+          <a href="/termsOfService">Terms Of Service</a>
+      </div>
+      <div class="privacy-policy">
+          <a href="/privacyPolicy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</modal>

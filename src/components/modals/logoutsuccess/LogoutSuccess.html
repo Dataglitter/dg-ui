@@ -1,0 +1,33 @@
+<modal height="auto"
+       name="logout-success"
+       width="60%">
+  <div class="close-get-started-dialog"
+       v-on:click="close('logout-success')">
+    <svg>
+      <use xlink:href="#error-new" />
+    </svg>
+  </div>
+  <div id="Logout-Success-Modal">
+    <div class="logout-success-form">
+      <div class="logout-success-image">
+        <svg>
+          <use xlink:href="#checked-new" />
+        </svg>
+      </div>
+      <h2 class="logout-success-title">See you soon!</h2>
+      <div class="all-sign-in-options"
+           v-on:click="navigateTo('logout-success', 'login')">
+        <svg>
+          <use xlink:href="#back-arrow" />
+        </svg>
+        <a>Back to sign in</a>
+      </div>
+      <div>
+          <a href="/termsOfService">Terms Of Service</a>
+      </div>
+      <div class="privacy-policy">
+          <a href="/privacyPolicy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</modal>

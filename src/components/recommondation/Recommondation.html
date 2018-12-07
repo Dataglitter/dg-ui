@@ -1,0 +1,33 @@
+<div class="recommondation"
+     id="Recommondation">
+  <div class="rec-header">
+    <svg class="author-connect-icon">
+      <use xlink:href="#living-room-books-group" />
+    </svg>
+    <h5>Recommonded reads for you</h5>
+  </div>
+  <div class="ibox"
+       v-for="Recommondation in RecommondationDetails"
+       v-if="Recommondation.id != CurrentPaper">
+    <a class="paper-cover-picture"
+       v-bind:href="Recommondation.url">
+      <div v-bind:style="{ backgroundImage: 'url(' + Recommondation.coverImage + ')' }"
+           v-if="Recommondation.coverImage"></div>
+    </a>
+    <div class="ibox-content">
+      <a v-bind:href="Recommondation.url">
+        <h6>
+          <strong>
+            <b>{{Recommondation.title}}</b>
+          </strong>
+        </h6>
+      </a>
+      <p class="ibox-created-text">{{Recommondation.timeAgo}} | {{Recommondation.viewedBy}} views</p>
+      <p>{{Recommondation.shortDescription}}</p>
+      <a class="read-more"
+         v-bind:href="Recommondation.url">
+        <strong>Read more...</strong>
+      </a>
+    </div>
+  </div>
+</div>

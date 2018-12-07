@@ -1,0 +1,47 @@
+@import "../../assets/scss/custom-bootstrap-variables.scss";
+
+#Recommondation {
+    display:flex;
+    flex-direction: column;
+    .rec-header {
+        display:flex;
+        flex-direction: row;
+        line-height: 2;
+        svg {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+    }
+    .ibox{
+        display:flex;
+        flex-direction: column;
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0, .65);
+        -moz-box-shadow: 0 0 10px rgba(0,0,0, .65);
+        box-shadow: 0 0 10px rgba(0,0,0, .65);
+        margin:10px 0px;
+        .paper-cover-picture{
+            div {
+                width: calc(100% - 20px);
+                height:200px;
+                align-self: center;
+                margin: 10px;
+                background-position: 50% 50% !important;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+            }
+        }
+        .ibox-content {
+            padding: 10px;
+            .ibox-created-text{
+                display:flex;
+                flex-direction: row;
+                font-size: 12px;
+            }
+            a {
+                color: $primary;
+            }
+            
+        }
+    }
+}

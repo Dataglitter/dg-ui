@@ -1,0 +1,51 @@
+<div class="author"
+     id="Author">
+    <div class="author-profile-pic">
+            <a v-if="AuthorDetails.profilePicture" class="profile-pic">
+                <div v-bind:style="{ backgroundImage: 'url(' + AuthorDetails.profilePicture + ')' }"></div>
+            </a>
+            <img v-else src="../../assets/images/logo.png">
+    </div>
+    <div class="author-profile">
+        <p class="author-name">
+            <svg class="author-ink-icon">
+                <use xlink:href="#hand-writing-with-ballpen" /> 
+            </svg>&nbsp;
+            <strong>{{ AuthorDetails.name }}</strong>
+        </p>
+        <p v-if="AuthorDetails.designation" class="author-desig">
+            <svg class="author-desig-icon">
+                <use xlink:href="#black-graduation-cap-tool-of-university-student-for-head" /> 
+            </svg>&nbsp;
+            {{ AuthorDetails.designation }}
+        </p>
+        <p v-if="AuthorDetails.about" class="author-about">{{ AuthorDetails.about }}</p>
+        <p class="author-connect">
+            <a v-if="AuthorDetails.facebookURL" v-bind:href="AuthorDetails.facebookURL">
+                <svg class="author-connect-icon">
+                    <use xlink:href="#facebook-logo-n" /> 
+                </svg>
+            </a>
+            <a v-if="AuthorDetails.linkedinURL" v-bind:href="AuthorDetails.linkedinURL">
+                <svg class="author-connect-icon">
+                    <use xlink:href="#linkedin" /> 
+                </svg>
+            </a>
+            <a v-if="AuthorDetails.instagramURL" v-bind:href="AuthorDetails.instagramURL">
+                <svg class="author-connect-icon">
+                    <use xlink:href="#social-instagram-circle-n" /> 
+                </svg>
+            </a>
+            <a v-if="AuthorDetails.twitterURL" v-bind:href="AuthorDetails.twitterURL">
+                <svg class="author-connect-icon">
+                    <use xlink:href="#twitter-n" /> 
+                </svg>
+            </a>
+            <a v-if="AuthorDetails.githubURL" v-bind:href="AuthorDetails.githubURL"></a>
+                <svg class="author-connect-icon">
+                    <use xlink:href="#github-big-logo" />
+                </svg>
+            </a>
+        </p>
+    </div>
+</div>

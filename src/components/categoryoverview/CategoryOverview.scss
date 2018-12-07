@@ -1,0 +1,13 @@
+@import "../../assets/scss/custom-bootstrap-variables.scss";
+
+#CategoryOverview {
+    margin-top: 65px;
+    padding-bottom:70px;
+    position: relative;
+    #CategoryOverview-Content {
+        padding-right:2%;
+    }
+    .loadButton {
+        margin-bottom: 20px;
+    }
+}

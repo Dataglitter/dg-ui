@@ -1,0 +1,62 @@
+<div class="container"
+      id="Credits">
+  <div class="section-header">
+    <h4>Icon Credits</h4><hr>
+  </div>
+  <div class="row info-graphic">
+    <div class="col-md-8" id="viz"
+          ref="viz">
+      <center class="info-graphic-headers">
+        <h5>Interact with the visualization to see credits</h5>
+      </center>
+      <svg id="credit-viz"></svg>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12">
+          <center class="info-graphic-headers">
+            <div v-if="currentIcon">
+              <h5>The below <i>Icon</i> were developed by <strong>{{ currentIcon.name }}</strong></h5>
+              <a v-bind:href="currentIcon.webHref">
+                <svg class="current-selection-icon">
+                    <use v-bind:xlink:href="currentIcon.imageHref" /> 
+                </svg>
+              </a>
+            </div>
+            <div v-if="!currentIcon">
+              <h5>All Icons used in DataGlitter have been taken from <strong>Flat Icons</strong>.</h5><br>
+            </div>
+          </center>
+        </div>
+      </div>
+      <div class="row">
+        <div class="info-graphic-body col-md-12">
+          <div v-if="currentIcon">
+              <h6>We value and appretiate their efforts for the Icons they have provided. These are some of the other <i>Icons</i> by this developer:</h6>
+          </div>
+          <div v-if="!currentIcon">
+              <h6>We appretiate the efforts of all developers and designers who have made such stunning icons. Please find below some of the icons in display:</h6>
+          </div>
+        </div>
+      </div>
+      <div v-if="currentIcon" class="row">
+        <div class="col-sm-3 icon-holder" v-for="icon in iconData" v-if="icon.cluster == currentIcon.cluster">
+            <a v-bind:href="icon.webHref">
+              <svg class="current-selection-author-icons">
+                  <use v-bind:xlink:href="icon.imageHref" /> 
+              </svg>
+            </a>
+        </div>
+      </div>
+      <div v-if="!currentIcon" class="row">
+        <div class="col-sm-3 icon-holder" v-for="icon in iconData.slice(0, 32)">
+            <a v-bind:href="icon.webHref">
+              <svg class="current-selection-author-icons">
+                  <use v-bind:xlink:href="icon.imageHref" /> 
+              </svg>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

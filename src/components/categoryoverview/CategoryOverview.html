@@ -1,0 +1,28 @@
+<div class="container category-overview"
+     id="CategoryOverview">
+  <div class="row">
+    <div class="col-md-12"
+         id="CategoryOverview-Content">
+      <card v-bind:CardData="papers"
+            v-bind:CardMetadata="papersMetadata"
+            v-bind:ProfileData="profileData"
+            v-if="profileContent && papersContent"></card>
+    </div>
+  </div>
+  <div class="row loadButton"
+       v-if="profileContent && papersContent && enableLoadMore">
+    <div class="col-md-12">
+      <center>
+        <button class="btn btn btn-outline-primary btn-sm"
+                v-on:click="getNextPage">
+        <pulse-loader v-if="loadingContent"></pulse-loader>Load more</button>
+      </center>
+    </div>
+  </div>
+  <div class="row"
+       v-if="!papersContent">
+    <div class="col-md-12">
+      <loader></loader>
+    </div>
+  </div>
+</div>

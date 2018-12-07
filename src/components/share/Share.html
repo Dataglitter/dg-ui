@@ -1,0 +1,28 @@
+<div class="share"
+     id="Share">
+  <h5 v-if="ShareData.medalData.show">
+    <b>
+      <i>{{ ShareData.medalData.count }}</i>
+    </b>
+  </h5>
+  <a v-on:click="incrementMedal(ShareData.medalData.id)">
+    <svg class="clap">
+      <use xlink:href="#medal" />
+    </svg>
+  </a>
+  <a v-bind:href="'https://www.facebook.com/sharer/sharer.php?u=' + pagePath">
+    <svg class="facebook">
+      <use xlink:href="#facebook-logo-n-1" />
+    </svg>
+  </a>
+  <a v-bind:href="'https://twitter.com/share?url=' + pagePath">
+    <svg class="twitter">
+      <use xlink:href="#twitter-m" />
+    </svg>
+  </a>
+  <a v-on:click="addBookmark()">
+    <svg class="bookmark">
+      <use xlink:href="#bookmark-black-shape" />
+    </svg>
+  </a>
+</div>

@@ -1,0 +1,40 @@
+<modal height="auto"
+       name="login"
+       width="60%">
+  <div class="close-get-started-dialog"
+       v-on:click="close('login')">
+    <svg>
+      <use xlink:href="#error-new" />
+    </svg>
+  </div>
+  <div id="Login-Modal">
+    <div class="login-form">
+      <div class="login-image">
+        <svg>
+          <use xlink:href="#fountain-pen-close-up" />
+        </svg>
+      </div>
+      <h2 class="login-title">Welcome back</h2>
+      <p class="login-description">Sign in to write, access &nbsp; edit your papers. Never miss out on stuff by your favourite authors by subscribing to their papers.</p>
+      <div class="sign-up-email"
+           v-on:click="navigateTo('login', 'email-form')">
+        <div class="sign-up-svg-email">
+          <svg>
+            <use xlink:href="#email-filled-closed-envelope-new" />
+          </svg>
+        </div>
+        <p class="sign-up-email-text">Sign in with email</p>
+      </div>
+      <div class="existing-user">
+        <h6>Do not have an account yet?&nbsp;</h6>
+        <p v-on:click="navigateTo('login', 'get-started')">Get Started</p>
+      </div>
+      <div>
+        <a href="/termsOfService">Terms Of Service</a>
+      </div>
+      <div class="privacy-policy">
+          <a href="/privacyPolicy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</modal>

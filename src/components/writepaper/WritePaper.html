@@ -1,0 +1,67 @@
+<div class="container profile"
+     id="Write-Paper">
+  <div class="row">
+    <div class="col-md-12"
+         id="Write-Paper-Content">
+      <div class="row">
+        <form>
+            <div class="form-group">
+                <label for="dg-title">Title</label>
+                <input  v-validate="'required'" type="text" name="title" class="form-control" id="dg-title" aria-describedby="titleHelp" v-model="paper.title" :class="{'input': true, 'is-danger': errors.has('title') }">
+                <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
+                <small id="titleHelp" class="form-text text-muted">Title of the paper; Used for SEO</small>
+            </div>
+            <div class="form-group" v-if="paper.coverImage">
+                <center>
+                    <div id="pic-display" v-bind:style="{ backgroundImage: 'url(' + paper.coverImage + ')' }"></div>
+                </center>
+              </div>
+              <div class="form-group">
+                    <label for="dg-pic">Cover Picture</label>
+                    <input type="file" accept="image/*" class="form-control" id="dg-pic" aria-describedby="picHelp" v-on:change="onFileChange($event)">
+                    <small id="picHelp" class="form-text text-muted">will be used in the Paper tile</small>
+              </div>
+            <div class="form-group">
+                <label for="dg-short-description">Brief your paper in 60 words</label>
+                <textarea maxlength="500" class="form-control" id="dg-short-description" aria-describedby="short-descriptionHelp" v-model="paper.shortDescription"></textarea>
+                <small id="short-descriptionHelp" class="form-text text-muted">Used for SEO and in the recommondations. <i>Do not exceed 60 words</i>.</small>
+            </div>
+            <div class="form-group">
+                <label for="dg-category">Category</label>
+                <div id="dg-category" aria-describedby="categoryHelp">
+                    <div v-for="category in categories">
+                        <input type="radio" class="form-control" v-model="paper.category" v-bind:value="category.code"> {{ category.name }}
+                    </div>
+                </div>
+                <small id="categoryHelp" class="form-text text-muted">Used to categorize your paper and used for recommondations</small>
+            </div>
+            <div class="form-group">
+                <label for="dg-tags">Tags</label>
+                <div id="dg-tags" aria-describedby="tagsHelp">
+                    <button v-for="tag in paper.tags" class="btn btn-sm btn-outline-primary" disabled>{{ tag }}
+                        <button v-on:click.prevent="removeTag(tag)"><b>x</b></button>
+                    </button> <br>
+                    <div class="operation">
+                        <input type="text" v-model="newTag">
+                        <a class="btn btn-primary" v-on:click="addTag()" >Add</a>
+                       <!--  <a class="btn btn-primary" v-on:click="removeTag()" >Remove</a> -->
+                    </div>
+                </div>
+                <small id="tagsHelp" class="form-text text-muted">Used for SEO</small>
+            </div>
+            <div class="form-group">
+                <label for="d1">Paper Content</label>
+                <tinymce id="d1" 
+            v-bind:other_options="tinyOptions" 
+            v-model="paper.content"
+            aria-describedby="d1Help"
+                ></tinymce>
+                <small id="d1Help" class="form-text text-muted">Paper body</small>
+            </div>
+          <button type="button" class="btn btn-primary"
+                  v-on:click.prevent="savePaper()">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

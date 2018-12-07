@@ -1,0 +1,29 @@
+<footer class="footer-bar"
+        id="FooterBar">
+  <a class="order-one"
+     v-on:click="subscribeToAuthor()">
+    <svg class="subscribe">
+      <use xlink:href="#blog-symbol" />
+    </svg>
+  </a>
+  <div class="order-two">
+    <a class="author-footer-pic"
+       v-bind:href="FooterData.linkToProfile"
+       v-if="FooterData.enable">
+      <div v-bind:style="{ backgroundImage: 'url(' + FooterData.picture + ')' }"></div>
+    </a>
+    <div class="author-footer-details"
+         v-if="FooterData.enable">
+      <p>Want to 
+      <span class="badge badge-pill badge-primary"
+            v-on:click="subscribeToAuthor()">Subscribe</span>&nbsp;to 
+      <b>{{ FooterData.authorName }}</b>'s papers?</p>
+      <a v-bind:href="FooterData.linkToProfile">Know more about the author</a>
+    </div>
+  </div>
+  <a class="order-three" href="/credits">
+    <svg class="credits">
+      <use xlink:href="#graduate-certificate" />
+    </svg>
+  </a>
+</footer>

@@ -1,0 +1,60 @@
+<div class="container-fluid paper"
+id="Paper">
+    <div class="row">
+        <div class="col-md-1"
+        id="Share">
+            <share v-if="enableShare" v-bind:ShareData="shareData"></share>
+        </div>
+        <div id="Paper-Content" class="col-md-8">
+            <div class="paper-content-body">
+                <article>
+                    <header v-if="paper.title">
+                        <center>
+                            <div>
+                                <svg class="paper-icon header-item">
+                                    <use xlink:href="#quill-drawing-a-line" /> 
+                                </svg>
+                                <h2 class="header-item">{{paper.title}}</h2><br>
+                            </div>
+                            <div class="paper-metadata">
+                                    <svg class="calendar-icon">
+                                        <use xlink:href="#clock" /> 
+                                    </svg>&nbsp;
+                                    <p class="header-item header-date">{{paper.timeAgo}} &nbsp;&nbsp;</p>
+                                    
+                                    <p class="header-item header-tag" v-for="tag in paper.tags">
+                                        <svg class="tag-icon">
+                                            <use xlink:href="#tag" /> 
+                                        </svg>
+                                        &nbsp;{{tag}}&nbsp;&nbsp;
+                                    </p>
+                            </div>
+                            <div class="paper-cover-picture" v-if="paper.coverImage" v-bind:style="{ backgroundImage: 'url(' + paper.coverImage + ')' }" ></div>
+                        </center>
+                    </header>
+                    <section v-html="paper.content" class="paper-content-body" id="Paper-Content-Body"></section>
+                    <footer>
+                        <getstarted v-if="enablePopularCard && displayMostPopularRecommondation"></getstarted>
+                        <card v-bind:CardData="popularCardData"
+                            v-bind:CardMetadata="popularCardMetadata"
+                            v-bind:ProfileData="profileData"
+                            v-if="enablePopularCard && displayMostPopularRecommondation"></card>
+                            <category v-if="enablePopularCard"></category>
+                    </footer>
+                </article>
+            </div>
+        </div>
+        <div id="Marketing" class="col-md-3">
+                <button class="btn btn-outline-primary btn-sm"
+                v-if="!paper.moderated && activateModeration"
+                v-on:click="actionModerate(paper.id,true)">Moderate</button>
+                <button class="btn btn-outline-primary btn-sm"
+                v-if="paper.moderated && activateModeration"
+                v-on:click="actionModerate(paper.id,false)">Unmoderate</button> 
+            <author v-if="enableAuthorDetails" v-bind:AuthorDetails="AuthorDetails" ></author>
+            <hr v-if="enableAuthorDetails">
+            <recommondation v-if="enableRecommondationDetails" v-bind:RecommondationDetails="RecommondationDetails" v-bind:CurrentPaper="paperId"></recommondation>
+        </div>
+    </div>
+</div>
+

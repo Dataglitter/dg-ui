@@ -1,0 +1,89 @@
+@import "../../assets/scss/custom-bootstrap-variables.scss";
+
+#Paper {
+    margin-top: 65px;
+    padding-bottom:70px;
+    position:relative;
+    .profile-and-recommondations{
+        border-left:1px solid $gray-lighter;
+    }
+    #Paper-Content {
+        padding-right:2%;
+    }
+
+    .paper-content-body {
+        h1 {
+            color:$primary;
+        }
+        article {
+            header {
+                margin: 30px 0px 15px 0px;
+                div {
+                    display:flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    .paper-icon {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                .paper-metadata {
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    .header-date, .header-tag {
+                        font-style: italic;
+                        line-height: 1;
+                        margin: 0px 3px 10px 3px;
+                        padding:3px 5px 7px 5px;
+                    }
+                    .header-tag {
+                        background-color: $gray-lighter;
+                        border-radius: 10px;
+                    }
+                    .header-item {
+                        align-self: center;
+                    }
+                    .tag-icon {
+                        width: 12px;
+                        height: 12px;
+                        margin-top: 5px;
+                        fill: $primary;
+                    }
+                    .calendar-icon {
+                        width: 18px;
+                        height: 18px;
+                        margin-top: 5px;
+                        fill: $primary;
+                    }
+                }
+
+                .paper-cover-picture {
+                    width: 100%;
+                    height: 500px;
+                    background-position: 50% 50% !important;
+                    background-size: contain !important;
+                    background-repeat: no-repeat !important;
+                }
+            }
+            section, .Paper-Content-Body, #paper-content-body {
+                font-size: 16px;
+                img {
+                    width: 100% !important;
+                    height: auto;
+                }
+                @media screen and (max-width: $small-device) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    #Marketing{
+        hr {
+            margin-top:0px;
+        }
+    }
+}

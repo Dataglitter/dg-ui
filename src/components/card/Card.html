@@ -1,0 +1,73 @@
+<div class=""
+     id="Card-Custom-DG">
+  <div>
+    <div class="card-header-dg"
+         v-if="CardMetadata.homeHeader">
+      <div>
+        <h5>
+          <b>{{CardMetadata.title}}</b>
+        </h5>
+        <a v-bind:href="CardMetadata.moreHref"
+           v-if="CardMetadata.more">MORE
+        <svg class="bookmark">
+          <use xlink:href="#right-arrow-nib" />
+        </svg></a>
+      </div>
+    </div>
+    <div class="card-list-dg">
+      <div v-bind:class="CardMetadata.displayClass"
+           v-for="Card in CardData"
+           v-if="Card.id != CardMetadata.currentPaper">
+        <a class="card-image-dg"
+           v-bind:href="Card.url">
+          <div v-bind:style="{ backgroundImage: 'url(' + Card.coverImage + ')' }"></div>
+        </a>
+        <div class="card-content-dg">
+          <div class="card-metadata">
+            <div class="quality">
+              <svg>
+                <use xlink:href="#quality-n" />
+              </svg>
+            </div>
+            <h6 class="card-title">
+              <a v-bind:href="Card.url">
+                <b>{{Card.title}}</b>
+              </a>
+            </h6>
+            <p class="card-short-description">{{Card.shortDescription}}</p>
+          </div>
+          <div class="card-author-details-dg">
+            <a class="card-author-image">
+              <div v-bind:style="{ backgroundImage: 'url(' + ProfileData[Card.authorId].profilePicture + ')' }"></div>
+            </a>
+            <div class="paper-details">
+              <p>
+                <b>{{Card.author}}</b>
+              </p>
+              <div class="synopsis">
+              <p class="time-ago">{{Card.timeAgo}}</p>&nbsp;&nbsp;
+              <div class="eye">
+              <svg>
+                <use xlink:href="#eye" />
+              </svg>&nbsp;
+              <p>{{Card.viewedBy}}</p></div></div>
+            </div>
+            <div class="edit-options"
+                 v-if="CardMetadata.edit">
+              <button class="btn btn-outline-primary btn-sm"
+                      v-on:click="routeToEdit(Card.id)">Edit</button>
+              <button class="btn btn-outline-secondary btn-sm"
+                      v-if="!Card.published"
+                      v-on:click="publishPaper(Card.id)">Publish</button>
+              <button class="btn btn-outline-warning btn-sm"
+                      v-if="Card.published"
+                      v-on:click="unPublishPaper(Card.id)">Un-publish</button>
+              <button class="btn btn-outline-danger btn-sm"
+                      v-on:click="deletePaper(Card.id)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

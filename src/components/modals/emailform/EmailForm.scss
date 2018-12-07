@@ -1,0 +1,123 @@
+@import "../../../assets/scss/custom-bootstrap-variables.scss";
+@import "../../../assets/scss/validation.scss";
+
+.close-get-started-dialog {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    display: relative;
+    position: absolute;
+    right: 0px;
+    top:0px;
+    svg {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        fill: $gray-light;
+        :hover {
+            transition: all .3s ease-in-out;
+            transform: scale(1.2);
+            transform-origin: 50% 50%;
+            fill: $primary;
+        }
+    }
+}
+#Email-Form-Modal {
+    background-color: $background-color-secondary !important;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image:url('../../../assets/images/growth.png');
+    background-position: 100% 10% !important;
+    background-size: auto 120px;
+    background-repeat: no-repeat;
+    .email-form {
+        align-items: center;
+        width: 70%;
+        min-width:200px;
+        display:flex;
+        flex-direction: column;
+        .email-form-image{
+            align-items: center;
+            width: 50%;
+            min-width:200px;
+            margin-bottom: 10px;
+            svg {
+                display:block;
+                margin: auto;
+                width:100%;
+                height:auto;
+                fill: $black;
+            }
+        }
+
+        .email-form-description, .email-form-title {
+            text-align: center;
+        }
+        .email-form-description {
+            font-weight: 300;
+        }
+        .email-form-title {
+            font-weight: bold;
+        }
+        .all-sign-in-options{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            height: 30px;
+            padding: 2px 10px;
+            min-width: 320px;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 10px;
+            svg {
+                display: block;
+                margin-right: 10px;
+                width:20px;
+                height:20px;
+                fill: $blue;
+            }
+        }
+
+        .form-label {
+            font-size: 300;
+        }
+
+        .form-email-input, .form-password-input {
+            width:70%;
+            box-sizing: border-box;
+            border: 0;
+            border-bottom: 0.5px solid $gray-light;
+            background-color: inherit;
+            margin-bottom: 20px;
+            outline: 0;
+            text-align: center;
+        }
+
+        .signin-sign-up-button {
+            margin-bottom: 20px;
+        }
+
+        .error-message-display, .success-message-display {
+            text-align: center;
+        }
+
+        .error-message-display {
+            color: $danger;
+        }
+
+        .success-message-display {
+            color: $green;
+        }
+
+        @media screen and (max-width: $small-device) {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $small-device) {
+        background-image: none;
+    }
+}

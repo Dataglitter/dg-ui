@@ -1,0 +1,13 @@
+<div class="row"
+     id="Category-DG">
+  <div class="col-md-4 category" v-for="category in categories">
+    <center v-bind:href="category.href">
+      <a v-bind:href="category.href">
+        <svg class="author-connect-icon">
+            <use v-bind:xlink:href="category.icon" /> 
+        </svg>
+      </a>
+      <b><h6>{{ category.name }}</h6></b>
+    </center>
+  </div>
+</div>

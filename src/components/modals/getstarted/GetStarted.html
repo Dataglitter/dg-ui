@@ -1,0 +1,40 @@
+<modal height="auto"
+       name="get-started"
+       width="60%">
+  <div class="close-get-started-dialog"
+       v-on:click="close('get-started')">
+    <svg>
+      <use xlink:href="#error-new" />
+    </svg>
+  </div>
+  <div id="Get-Started-Modal">
+    <div class="get-started-form">
+      <div class="get-started-image">
+        <svg>
+          <use xlink:href="#rocket-start-new" />
+        </svg>
+      </div>
+      <h2 class="get-started-title">Join DataGlitter</h2>
+      <p class="get-started-description">Read, write and share your knowledge with the comminty. Subscribe to the bleading edge technology updates and highly intellectual profession's papers which can boost your knowledge</p>
+      <div class="sign-up-email"
+           v-on:click="navigateTo('get-started', 'email-form')">
+        <div class="sign-up-svg-email">
+          <svg>
+            <use xlink:href="#email-filled-closed-envelope-new" />
+          </svg>
+        </div>
+        <p class="sign-up-email-text">Sign up with email</p>
+      </div>
+      <div class="existing-user">
+        <h6>Already have an account?&nbsp;</h6>
+        <p v-on:click="navigateTo('get-started', 'login')">Sign in</p>
+      </div>
+      <div class="service-terms">
+        <a href="/termsOfService">Terms Of Service</a>
+      </div>
+      <div class="privacy-policy">
+          <a href="/privacyPolicy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</modal>

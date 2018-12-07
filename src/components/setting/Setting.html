@@ -1,0 +1,34 @@
+<div class="setting container"
+     id="Setting">
+    <div class="col-md-12"
+         id="Setting-Content">
+        <h2>Settings</h2>
+        <br>
+        <div class="Setting-Body">
+            <div class="Setting-Item">
+                <div class="Settings-Item-Header">
+                    <svg>
+                        <use xlink:href="#keyhole-security" />
+                    </svg>
+                    <h4>Security</h4>
+                </div>
+                    
+                    <hr>
+                    <div>
+                        <h5>Deactivate account</h5>
+                        <p>Deactivating your account will remove it from DataGlitter within a few minutes. You can sign back in anytime to reactivate your account and restore its content.</p>
+                        <button class="btn btn-outline-primary"
+                        type="button" v-on:click="deactivate()">Deactivate</button>
+                    </div>
+                    <div>
+                        <br>
+                        <h5>Delete account</h5>
+                        <p>Permanently delete your account and all of your content.</p>
+                        <button class="btn btn-outline-primary"
+                        type="button" v-on:click="deleteAccount()">Delete</button>
+                    </div>
+            </div>
+        </div>
+      
+    </div>
+</div>
