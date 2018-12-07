@@ -64,7 +64,6 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    cat ./secrets/dataglitter.co.uk.crt
     docker build -t $(dockerId)/$(imageName):v$(major).$(minor).$(patch) .
   displayName: 'Build Docker image'
 
